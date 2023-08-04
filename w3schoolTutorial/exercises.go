@@ -13,6 +13,9 @@ func main() {
 	goConditions()
 	goSwitch()
 	goLoop1()
+	goLoop2()
+	goLoop3()
+	goLoop4()
 }
 
 // Write a Hello World function
@@ -97,5 +100,45 @@ func goLoop1() {
 		numbers[i] = i
 	}
 	fmt.Println(numbers)
+	extraPrintln()
+}
+
+func goLoop2() {
+	fmt.Println("Use a for loop to print \"Yes\" 5 times:")
+
+	for i := 0; i < 4; i++ {
+		fmt.Println("Yes")
+	}
+	extraPrintln()
+}
+
+// break & continue
+func goLoop3() {
+	fmt.Println("Iterate and print through loop from 0 through 10 but stop when it hits 5. Also skip 3")
+
+	for i := 0; i < 10; i++ {
+		if i == 3 {
+			continue
+		}
+
+		fmt.Println(i)
+		if i == 5 {
+			break
+		}
+	}
+	extraPrintln()
+}
+
+// using "range", "idx", "val"
+func goLoop4() {
+	fmt.Println("Give your top 3 fave ball players of all time using \"range\", \"idx\", \"val\" keyword")
+
+	//create an array of 3 elements
+	ballPlayers := [3]string{"Lebron", "Jordan", "Kobe"}
+
+	//create for loop that iterates the array and uses range to output index and value
+	for idx, val := range ballPlayers {
+		fmt.Printf("%v\t%v\n\n", idx+1, val)
+	}
 	extraPrintln()
 }
